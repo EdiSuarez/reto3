@@ -1,5 +1,5 @@
 
-package com.jalinet.grupo11.service;
+package com.jalinet.grupo11.service;//-
 
 import com.jalinet.grupo11.entities.Score;
 import java.util.List;

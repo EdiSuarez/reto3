@@ -1,5 +1,5 @@
 
-package com.jalinet.grupo11.dao;
+package com.jalinet.grupo11.dao;//-
 
 import com.jalinet.grupo11.entities.Score;
 import com.jalinet.grupo11.entities.ScoreCrudInterface;

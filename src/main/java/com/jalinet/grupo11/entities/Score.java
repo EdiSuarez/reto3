@@ -1,5 +1,5 @@
 
-package com.jalinet.grupo11.entities;
+package com.jalinet.grupo11.entities;//-
 
 import java.io.Serializable;
 import javax.persistence.Entity;
