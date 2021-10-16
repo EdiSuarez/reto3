@@ -21,7 +21,7 @@ import javax.persistence.Table;
 public class Reservation implements Serializable  {
         @Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-        private Integer id;
+        private Integer idReservation;
          Date startDate = new Date();
          Date devolutionDate = new Date();
          private String status = "created";
@@ -59,12 +59,12 @@ public class Reservation implements Serializable  {
       
 //==========================================================================      
 
-    public Integer getId() {
-        return id;
+    public Integer getIdReservation() {
+        return idReservation;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
 
     public Date getStartDate() {
