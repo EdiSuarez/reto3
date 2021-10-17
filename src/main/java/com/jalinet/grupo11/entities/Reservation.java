@@ -42,6 +42,19 @@ public class Reservation implements Serializable  {
        @JoinColumn(name = "clientId")
        @JsonIgnoreProperties({"reservations","messages"})//----------{"reservations","messages"}
           private Client client;
+       
+       private String score;
+       
+       
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+       
 
     public Client getClient() {
         return client;

@@ -15,10 +15,13 @@ import javax.persistence.Table;
 public class Score implements Serializable {
      @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+     
      private Integer id;
         private Integer claificacion;
         private String mensaje;
         private String reserva;
+
+   
 
     public Integer getId() {
         return id;
