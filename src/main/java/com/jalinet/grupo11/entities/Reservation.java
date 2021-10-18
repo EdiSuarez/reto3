@@ -17,36 +17,30 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="reservation")
-public class Reservation implements Serializable  {
-        @Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-        private Integer idReservation;
-         Date startDate = new Date();
-         Date devolutionDate = new Date();
-         private String status = "created";
-         
-        
-//////      @JsonIgnoreProperties("reservation")
-//////      @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "reservation")
-//////      //@OneToMany(cascade = {javax.persistence.CascadeType.PERSIST},mappedBy="category")
-//////      public List<Motocicleta> motorbikes;
-//==========================================================================
-        @ManyToOne
-        @JoinColumn(name = "reservationId" )  //   "reservationId" categoryId   como se va a llamar esa lave foranea
-        @JsonIgnoreProperties("reservations") //Tener en cuenta por ciclos repetitivosESTE ES EL CAMPO QUE DEBE IGNORAR
-        private Motorbike motorbike;
-//        
-//        
-       @ManyToOne
-       @JoinColumn(name = "clientId")
-       @JsonIgnoreProperties({"reservations","messages"})//----------{"reservations","messages"}
-          private Client client;
-       
-       private String score;
-       
-       
+@Table(name = "reservation")
+public class Reservation implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idReservation;
+    Date startDate = new Date();
+    Date devolutionDate = new Date();
+    private String status = "created";
+     private String score;
+
+    @ManyToOne
+    @JoinColumn(name = "reservationId")
+    @JsonIgnoreProperties("reservations")
+    private Motorbike motorbike;
+       
+    @ManyToOne
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties({"reservations", "messages"})
+    private Client client;
+
+   
+
+       
     public String getScore() {
         return score;
     }
@@ -54,7 +48,6 @@ public class Reservation implements Serializable  {
     public void setScore(String score) {
         this.score = score;
     }
-       
 
     public Client getClient() {
         return client;
@@ -63,14 +56,6 @@ public class Reservation implements Serializable  {
     public void setClient(Client client) {
         this.client = client;
     }
-
-  
-    
-
-  
-       
-      
-//==========================================================================      
 
     public Integer getIdReservation() {
         return idReservation;
@@ -112,9 +97,6 @@ public class Reservation implements Serializable  {
         this.motorbike = motorbike;
     }
 
-   
-
-   
-
+  
           
-}//Fin
+}

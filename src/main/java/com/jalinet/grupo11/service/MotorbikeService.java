@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MotorbikeService {
     @Autowired
-    MotorbikeRepository motorbikeRepository;//-------------private al inicio
+    MotorbikeRepository motorbikeRepository;
     
   public List<Motorbike> getAll() {return (List<Motorbike>) motorbikeRepository.getAll();};
   

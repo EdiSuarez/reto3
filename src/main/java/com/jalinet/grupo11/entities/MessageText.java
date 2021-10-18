@@ -18,28 +18,24 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="messageText")
+@Table(name = "messageText")
 public class MessageText implements Serializable {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-     private Integer idMessage;
-     private String messageText;
-     
 
-     
-  //===========================================================================   
-        @ManyToOne
-        @JoinColumn(name = "messageTextId")  //"messageTextId"  como se va a llamar esa lave foranea
-        @JsonIgnoreProperties({"messages","reservations"}) //   {"messages"Tener en cuenta por ciclos repetitivosESTE ES EL CAMPO QUE DEBE IGNORAR
-        private Motorbike motorbike;
-      
-       @ManyToOne
-       @JoinColumn(name = "clientId")
-       @JsonIgnoreProperties({"messages","reservations"})//-----
-       private Client client;
-       
-       
-//============================================================================00
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idMessage;
+    private String messageText;
+
+    @ManyToOne
+    @JoinColumn(name = "messageTextId")
+    @JsonIgnoreProperties({"messages", "reservations"})
+    private Motorbike motorbike;
+
+    @ManyToOne
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties({"messages", "reservations"})
+    private Client client;
+
 
     public Integer getIdMessage() {
         return idMessage;
@@ -73,12 +69,7 @@ public class MessageText implements Serializable {
         this.client = client;
     }
 
-  
-
-     
-    
-   
-}//fin
+}
 
 
      

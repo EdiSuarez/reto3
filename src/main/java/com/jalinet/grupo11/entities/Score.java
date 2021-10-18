@@ -1,5 +1,5 @@
 
-package com.jalinet.grupo11.entities;//-
+package com.jalinet.grupo11.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -11,15 +11,16 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table (name="score")
+@Table(name = "score")
 public class Score implements Serializable {
-     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-     
-     private Integer id;
-        private Integer claificacion;
-        private String mensaje;
-        private String reserva;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Integer id;
+    private Integer claificacion;
+    private String mensaje;
+    private String reserva;
 
    
 
@@ -55,9 +56,5 @@ public class Score implements Serializable {
         this.reserva = reserva;
     }
         
-        
-        
-    
-    
-    
+            
 }

@@ -26,9 +26,9 @@ public class MotorbikeController {
     private MotorbikeService motorbikeService;
     
     @GetMapping("/all")
-      public List<Motorbike> getMotorbike() {return motorbikeService.getAll();};///---Plural///---Plural///---Plural///---Plural
+      public List<Motorbike> getMotorbike() {return motorbikeService.getAll();};
 
-    @GetMapping("/{id}")                                            //int id
+    @GetMapping("/{id}")                                            
       public Optional<Motorbike> getMotorbike(@PathVariable("id") int motorbikeId) {
           return motorbikeService.getMotorbike(motorbikeId);
       }

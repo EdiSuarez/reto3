@@ -14,37 +14,26 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="client")
-public class Client implements Serializable{
-        @Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer idClient;
-        private String email;
-        private String password;
-        private String name;
-        private Integer age;
-    //=============================================================================
-   // @JsonIgnoreProperties("category")
-     @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST},mappedBy="client")//Este campo debe coincidir con el nombre con el que se almaceno
-     @JsonIgnoreProperties("client")
-     public List<MessageText> messages ;
-    
-     @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST},mappedBy="client")  
-     @JsonIgnoreProperties("client")
-     public List<Reservation> reservations;
+@Table(name = "client")
+public class Client implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idClient;
+    private String email;
+    private String password;
+    private String name;
+    private Integer age;
+
+    @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "client")
+    @JsonIgnoreProperties("client")
+    public List<MessageText> messages;
+
+    @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "client")
+    @JsonIgnoreProperties("client")
+    public List<Reservation> reservations;
 
      
-     
-//    public List<Reservation> getReservations() {
-//        return reservations;
-//    }
-//
-//    public void setReservations(List<Reservation> reservations) {
-//        this.reservations = reservations;
-//    }
-        
-        //====================================================================
-
     public Integer getIdClient() {
         return idClient;
     }
@@ -93,7 +82,4 @@ public class Client implements Serializable{
         this.messages = messages;
     }
 
-        
-    
-    
 }

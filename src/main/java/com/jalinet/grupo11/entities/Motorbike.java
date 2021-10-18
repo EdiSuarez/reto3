@@ -1,5 +1,14 @@
 
+/**
+ *
+ * plantilla compartida por docente-creditos al creador inicial del proyecto
+ */
+
 package com.jalinet.grupo11.entities;
+/**
+ *
+ * Imports necesarios para ejecucion del codigo
+ */
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
@@ -13,41 +22,45 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/**
+ *
+ * @author Alex
+ */
 
 @Entity
 @Table (name="motorbike")
-public class Motorbike  implements Serializable { // public class Motorbike implements Serializable
+public class Motorbike  implements Serializable { 
+/**
+ *
+ * Creacion de variables y atributos de las tablas a crear
+ */  
     
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    	private Integer id;
-        private String name;
-        private String brand;
-        private Integer year;
-        private String description;
-       
-//     
-        @ManyToOne
-        @JoinColumn(name = "categoryId")  //categoryId   como se va a llamar esa lave foranea
-        @JsonIgnoreProperties("motorbikes") //"motorbikes"Tener en cuenta por ciclos repetitivosESTE ES EL CAMPO QUE DEBE IGNORA
-        private Category category;//Este es el campo que me almacena la categoriaLA MOTOCICLETA TIENE UN ATRIBUTO QUE SE LLAMA category
-  
-       
-     //@JsonIgnoreProperties("category")
-     @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST},mappedBy="motorbike")//Este campo debe coincidir con el nombre con el que se almaceno
-     @JsonIgnoreProperties({"motorbike","client"})//@JsonIgnoreProperties("motorbikes")
-     public List<MessageText> messages ;
-//     
-     
-     @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST},mappedBy="motorbike")//Este campo debe coincidir con el nombre con el que se almaceno
-     @JsonIgnoreProperties({"motorbike","messages"})// @JsonIgnoreProperties("motorbikes")
-     public List<Reservation> reservations ;
-// 
-        
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    private String brand;
+    private Integer year;
+    private String description;
 
- //========================================================================
+    @ManyToOne
+    @JoinColumn(name = "categoryId")  //categoryId   como se va a llamar esa lave foranea
+    @JsonIgnoreProperties("motorbikes") //Campo que se debe ignorar cuando se realiza relaciones
+    private Category category;//
 
-//=======================================================================
+    @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "motorbike")//Este campo debe coincidir con el nombre con el que se almaceno
+    @JsonIgnoreProperties({"motorbike", "client"})//@JsonIgnoreProperties("motorbikes")
+    public List<MessageText> messages;
+
+    @OneToMany(cascade = {javax.persistence.CascadeType.PERSIST}, mappedBy = "motorbike")
+    @JsonIgnoreProperties({"motorbike", "messages"})
+    public List<Reservation> reservations;
+    
+ /**
+ *
+ * Creacion de Sett y Gett
+ */  
+    
 
     public Integer getId() {
         return id;
@@ -96,7 +109,7 @@ public class Motorbike  implements Serializable { // public class Motorbike impl
     public void setCategory(Category category) {
         this.category = category;
     }
-//
+
     public List<MessageText> getMessages() {
         return messages;
     }
@@ -112,15 +125,8 @@ public class Motorbike  implements Serializable { // public class Motorbike impl
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-
- 
-
-  
         
- 
-
-         
-}//fin
+}
 
 
 

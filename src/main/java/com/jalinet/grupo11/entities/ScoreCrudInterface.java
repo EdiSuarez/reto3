@@ -1,5 +1,5 @@
 
-package com.jalinet.grupo11.entities;//-
+package com.jalinet.grupo11.entities;
 
 import org.springframework.data.repository.CrudRepository;
 
