@@ -19,6 +19,10 @@ public class MessageTextRepository {
   public Optional<MessageText> getMessageText(int id) {return messageTextCrudRepository.findById(id);};
   
   public MessageText save(MessageText messageText) { return messageTextCrudRepository.save(messageText);};
+  
+  public void delete(MessageText message){
+       messageTextCrudRepository.delete(message);
+    }
     
     
     

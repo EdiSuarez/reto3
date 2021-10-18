@@ -3,6 +3,7 @@ package com.jalinet.grupo11.service;
 
 import com.jalinet.grupo11.dao.CategoryRepository;
 import com.jalinet.grupo11.entities.Category;
+import com.jalinet.grupo11.entities.Motorbike;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,34 @@ public class CategoryService {
           }
        }
  
+    }
+  
+  //=========================Update================
+   public Category update(Category category){
+        if(category.getId()!=null){
+            Optional<Category>g=categoryRepository.getCategory(category.getId());
+            if(!g.isEmpty()){
+                if(category.getDescription()!=null){
+                    g.get().setDescription(category.getDescription());
+                }
+                if(category.getName()!=null){
+                    g.get().setName(category.getName());
+                }
+                return categoryRepository.save(g.get());
+            }
+        }
+        return category;
+    }
+  
+  //========================DElete============
+  
+  
+    public boolean deleteCategoria(int categoryId){
+        Boolean d=getCategory(categoryId).map(category -> {
+            categoryRepository.delete(category);
+            return true;
+        }).orElse(false);
+        return d;
     }
   
 }
