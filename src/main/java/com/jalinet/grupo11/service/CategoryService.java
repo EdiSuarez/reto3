@@ -3,7 +3,7 @@ package com.jalinet.grupo11.service;
 
 import com.jalinet.grupo11.dao.CategoryRepository;
 import com.jalinet.grupo11.entities.Category;
-import com.jalinet.grupo11.entities.Motorbike;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

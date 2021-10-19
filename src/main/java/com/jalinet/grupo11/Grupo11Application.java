@@ -1,15 +1,10 @@
 package com.jalinet.grupo11;
 
-import com.jalinet.grupo11.service.MotorbikeController;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
-
-//@EntityScan(basePackages = {"com.jalinet.grupo11.com.jalinet.grupo11.entities"})
 @SpringBootApplication
-
-//@ComponentScan(basePackageClasses = MotorbikeController.class)
 public class Grupo11Application {
 
 	public static void main(String[] args) {
