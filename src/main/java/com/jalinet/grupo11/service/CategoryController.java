@@ -39,7 +39,7 @@ public class CategoryController {
     @ResponseStatus(HttpStatus.CREATED)
       public Category save(@RequestBody Category category) {return categoryService.save(category);};
       
-      
+     //============Delete y Update================== 
         @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Category update(@RequestBody Category category)     {

@@ -34,7 +34,7 @@ public class MessageTextService {
        }
  
     }
-  //=================Update==================00
+  //=================Update==================
    public MessageText update(MessageText message){
         if(message.getIdMessage()!=null){
             Optional<MessageText> e= messageTextRepository.getMessageText(message.getIdMessage());
@@ -51,7 +51,7 @@ public class MessageTextService {
             return message;
         }
     }
-
+//==================Delete============================
     public boolean deleteMessage(int messageId) {
         Boolean aBoolean = getMessageText(messageId).map(message -> {
             messageTextRepository.delete(message);
